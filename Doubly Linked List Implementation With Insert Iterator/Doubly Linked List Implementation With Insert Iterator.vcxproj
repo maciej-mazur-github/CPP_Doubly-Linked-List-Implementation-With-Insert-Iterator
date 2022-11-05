@@ -127,12 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Doubly Linked List Implementation With Iterators\Doubly Linked List Implementation With Iterators\person.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="person.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Doubly Linked List Implementation With Iterators\Doubly Linked List Implementation With Iterators\person.h" />
-    <ClInclude Include="doubly_linked_list_iterators.h" />
+    <ClInclude Include="Dll_with_insert_iterator.h" />
+    <ClInclude Include="person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

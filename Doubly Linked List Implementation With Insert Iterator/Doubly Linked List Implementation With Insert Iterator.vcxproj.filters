@@ -18,15 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Doubly Linked List Implementation With Iterators\Doubly Linked List Implementation With Iterators\person.cpp">
+    <ClCompile Include="person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="doubly_linked_list_iterators.h">
+    <ClInclude Include="Dll_with_insert_iterator.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Doubly Linked List Implementation With Iterators\Doubly Linked List Implementation With Iterators\person.h">
+    <ClInclude Include="person.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
