@@ -5,7 +5,7 @@
 
 int main()
 {
-	List<int> list1;
+	List<int> list1("List<int>");
 	int a = 1;
 	int b = 2;
 	int c = 3;
@@ -16,64 +16,65 @@ int main()
 	cout << list1;
 
 
-	IteratorDll<int> iter(list1);
-	list1.addElement(c, iter);
+	IteratorDll<int> iter1(list1);
+	list1.addElement(c, iter1);
 	cout << list1;
-	iter++;
-	list1.addElement(e, iter);
-	cout << list1;
-
-	iter.moveToPosition(2);
-	list1.addElement(e, iter);
+	iter1++;
+	list1.addElement(e, iter1);
 	cout << list1;
 
-	iter.setChosenAfterLast();
-	list1.addElement(e, iter);
+	iter1.moveToPosition(2);
+	list1.addElement(e, iter1);
 	cout << list1;
 
-	list1.removeElement(iter);
+	iter1.setChosenAfterLast();
+	list1.addElement(e, iter1);
 	cout << list1;
 
-	iter.setChosenAsLast();
-	list1.removeElement(iter);
+	list1.removeElement(iter1);
 	cout << list1;
 
-	list1.removeElement(iter);
+	iter1.setChosenAsLast();
+	list1.removeElement(iter1);
 	cout << list1;
 
-	iter.setChosenAsFirst();
-	list1.removeElement(iter);
+	list1.removeElement(iter1);
 	cout << list1;
 
-	iter.moveToPosition(10);
-	list1.removeElement(iter);
+	iter1.setChosenAsFirst();
+	list1.removeElement(iter1);
 	cout << list1;
 
-	iter.setChosenAsFirst();
-	list1.removeElement(iter);
+	iter1.moveToPosition(10);
+	list1.removeElement(iter1);
+	cout << list1;
+
+	iter1.setChosenAsFirst();
+	list1.removeElement(iter1);
 	cout << list1;
 
 
 	try
 	{
-		cout << *iter;
-		cout << *(++iter);
+		*iter1 = 99;
+		cout << *iter1 << endl;
+		cout << *(iter1++) << endl;
 
-		iter++;
-		cout << *iter;
+		iter1++;
+		cout << *iter1 << endl;
 
-		iter++;
-		cout << *iter;
+		iter1++;
+		cout << *iter1 << endl;
 	}
 	catch (const char* msg) {
 		cerr << "Iterator pointing at no object" << endl;
 	}
 	
 
-	List<string> list2;
-	string s1 = "Dupa1",
-		s2 = "Dupa2",
-		s3 = "Dupa3";
+	List<string> list2("List<string>");
+	string s1 = "word1",
+		s2 = "word2",
+		s3 = "word3";
 
 	list2.addElement(s1);
 	list2.addElement(s2);
@@ -89,12 +90,10 @@ int main()
 		cerr << "Iterator pointing at no object" << endl;
 	}
 
-	
-
-	//cout << "\n\n" << list1;
 
 
-	List<Person> list3;
+
+	List<Person> list3("List<Person>");
 	Person person1("Caroline"), person2("Meggy"), person3("Jenny");
 	IteratorDll<Person> iter3(list3);
 
@@ -109,7 +108,9 @@ int main()
 	try
 	{
 		*iter3 = "Judith";
-		cout << "\n\n" << *iter3;
+		cout << "\n\n" << *iter3 << endl;
+		iter3.setChosenAfterLast();
+		cout << "\n\n" << *iter3 << endl;
 	}
 	catch (const char* msg) {
 		cerr << "Iterator pointing at no object" << endl;
@@ -118,7 +119,7 @@ int main()
 	
 	cout << "\n\n" << list3;
 
-	List<int> list4;
+	List<int> list4("List<int> with Insert Iterator");
 	int x = 1, y = 2, z = 3;
 
 	list4.addElement(x);
@@ -131,11 +132,21 @@ int main()
 	try
 	{
 		cout << *iter5;
-		int some = 122;
-		int some2 = 123;
-		(*iit)++ = some;
+		int number1 = 777;
+		int number2 = 123;
+		//iit++;
+		iit = 3333333;
 		cout << "\n\n" << list4;
-		*iit = some2;
+		
+		*(++iit) = number1;
+		cout << "\n\n" << list4;
+		iit++;
+		*(iit) = number1;
+		//iit++;
+		//*iit = 9999;
+		cout << "\n\n" << list4;
+		*iit = number2;
+		cout << "\n\n" << list4;
 	}
 	catch (const char* msg) {
 		cerr << "Iterator pointing at no object" << endl;

@@ -241,8 +241,6 @@ ostream& operator<<(ostream& out, List<T>& arg)
 	{
 		cout << *(bishop++) << "\t";
 
-		/*if (!(i % 3) && i != 0)
-			cout << "\n";*/
 	}
 	cout << "\n********************\n";
 
@@ -511,6 +509,7 @@ public:
 	InsertIterator(List<T>& dll = NULL)
 		: IteratorDll<T>(dll) {}
 
+
 	typedef InsertIterator iit;
 	//_____________________________________________
 	iit& operator*()
@@ -518,22 +517,23 @@ public:
 		return *this;
 	}
 	//_____________________________________________
-	iit& operator=(T& obj)
+	iit& operator=(T obj)
 	{
-		IteratorDll<T>::dll.addElement(obj, *this);
-		IteratorDll<T>::operator++();
+		T* newObj = new T(obj);
+		IteratorDll<T>::dll.addElement(*newObj, *this);
 		return *this;
 	}
 	//_____________________________________________
-	iit& operator++()
+	iit operator++()
 	{
-		//IteratorDll<T>::operator++();
 		IteratorDll<T>::operator++();
 		return *this;
 	}
+
 	//_____________________________________________
-	iit& operator++(int)
+	iit operator++(int)
 	{
+		IteratorDll<T>::operator++();
 		return *this;
 	}
 
